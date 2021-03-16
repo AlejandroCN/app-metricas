@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menuPrincipal"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+  <ion-card>
+    <ion-card-header>
+      <ion-img src="assets/images/logo.jpg"></ion-img>
+      <ion-card-title>Métricas De Software</ion-card-title>
+      <ion-card-subtitle>Opciones disponibles</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-item routerLink="/calcular-metricas">
+      <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+      <ion-label>Calcular Métricas</ion-label>
+    </ion-item>
+  
+    <ion-item routerLink="/ver-resultados">
+      <ion-icon slot="start" name="server-outline"></ion-icon>
+      <ion-label>Ver Base Datos</ion-label>
+    </ion-item>
+  
+    <ion-item routerLink="/creditos">
+      <ion-icon slot="start" name="reorder-four-outline"></ion-icon>
+      <ion-label>Créditos</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

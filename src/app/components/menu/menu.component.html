@@ -1,0 +1,31 @@
+<ion-menu side="start" menuId="menuPrincipal" contentId="main">
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>Menú Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+        <ion-item routerLink="/calcular-metricas">
+          <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+          <ion-label>Calcular Métricas</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item routerLink="/ver-resultados">
+          <ion-icon slot="start" name="server-outline"></ion-icon>
+          <ion-label>Ver Base Datos</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item routerLink="/creditos">
+          <ion-icon slot="start" name="reorder-four-outline"></ion-icon>
+          <ion-label>Créditos</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
