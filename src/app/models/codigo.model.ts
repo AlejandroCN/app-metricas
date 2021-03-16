@@ -1,7 +1,7 @@
 export class Codigo {
 
   public nombre: string;
-  public ubicacion: string;
+  public ruta: string;
   public icono: string;
 
 }

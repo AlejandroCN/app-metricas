@@ -1,0 +1,17 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <ion-title>{{ nombrePrograma }}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" class="ion=padding">
+  <pre>
+    {{ codigoFuente }}
+  </pre>
+</ion-content>

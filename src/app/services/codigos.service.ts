@@ -20,12 +20,10 @@ export class CodigosService {
     )
   }
 
-  obtenerCodigo(nombre: string): void {
-    this.http.get(`${this.rutaBaseCodigos}/codigos/${nombre}.txt`, {responseType: 'text'}).subscribe(resp => {
-      console.log(resp);
-    }, err => {
-      console.log(err);
-    });
+  obtenerCodigo(ruta: string): Observable<string> {
+    return this.http.get(ruta, {responseType: 'text'}).pipe(
+      map(response => response as string)
+    );
   }
 
 }
