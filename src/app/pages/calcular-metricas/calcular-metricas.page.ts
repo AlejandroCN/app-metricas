@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CodigosService } from '../../services/codigos.service';
+import { Observable } from 'rxjs';
+
+import { Codigo } from '../../models/codigo.model';
 
 @Component({
   selector: 'app-calcular-metricas',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalcularMetricasPage implements OnInit {
 
-  constructor() { }
+  public codigos: Observable<Codigo[]>
+
+  constructor(private codigosService: CodigosService) {}
 
   ngOnInit() {
+    this.codigos = this.codigosService.obtenerCodigosDisponibles();
   }
 
 }

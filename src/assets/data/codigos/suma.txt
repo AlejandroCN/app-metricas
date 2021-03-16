@@ -1,0 +1,36 @@
+declara
+    dato num -> numerico
+    dato numeros[10] -> numerico
+    dato suma -> numerico
+    dato cant -> numerico
+    dato i -> numerico
+fin_declara
+
+principal
+
+    escribir("Cuantos numeros va a ingresar?: ");
+    leer cant;
+
+    verdad(cant>0 y cant<=10) entonces
+        i <- 1;
+        itera(i <= cant)
+            escribir("Numero: ");
+            leer num;
+            numeros[i] <- num;
+            i <- i+1;
+        fin_itera;
+
+        suma <- 0;
+        i <- 1;
+        itera(i <= cant)
+            suma <- suma + numeros[i];
+            i <- i+1;
+        fin_itera;
+
+        escribir("La suma de los numeros ingresados es: ");
+        escribir(suma);
+    y_si_no
+        escribir_enter("Respuesta no valida");
+    fin_verdad;
+
+fin_principal

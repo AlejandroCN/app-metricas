@@ -1,0 +1,62 @@
+DECLARA
+	dato numeros[20] -> numerico
+	dato num, cant -> numerico
+	dato i, j, aux, suma -> numerico
+FIN_DECLARA
+
+principal
+	//Pedimos los datos al usuario
+	escribir("Cuantos numeros desea ingresar?: ");
+	leer cant;
+	
+	verdad(cant>0 y cant<=20) entonces
+		//Ciclo que lee los numeros por teclado
+		i <- 1;
+		itera(i <= cant)
+			escribir("Numero: ");
+			leer num;
+			numeros[i] <- num;
+			i <- i+1;
+		fin_itera;
+
+		//Ordenamiento bubbleSort
+		i <- 1;
+		itera(i <= cant)
+			j <- i+1;
+			itera(j <= cant)
+				verdad(numeros[i] > numeros[j]) entonces
+					aux <- numeros[i];
+					numeros[i] <- numeros[j];
+					numeros[j] <- aux;
+				fin_verdad;
+				j <- j+1;
+			fin_itera;
+			i <- i+1;
+		fin_itera;
+
+		//Mostrando el arreglo de numeros ya ordenado
+		i <- 1;
+		escribir_enter(" ");
+		escribir_enter("Arreglo de numeros ordenados:");
+		itera(i <= cant)
+			escribir_enter(numeros[i]);
+			i <- i+1;
+		fin_itera;
+
+		//Sumando todos los numeros del arreglo
+		suma <- 0;
+        i <- 1;
+        itera(i <= cant)
+            suma <- suma + numeros[i];
+            i <- i+1;
+        fin_itera;
+
+		escribir_enter(" ");
+        escribir("La suma de los numeros ingresados es: ");
+        escribir(suma);
+
+	y_si_no
+		escribir_enter("Respuesta no valida!");
+	fin_verdad;
+
+fin_principal

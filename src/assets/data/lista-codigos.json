@@ -1,0 +1,12 @@
+[
+  {
+    "nombre": "Suma",
+    "ruta": "/assets/data/codigos/suma.txt",
+    "icono": "add-outline"
+  },
+  {
+    "nombre": "Bubble Sort",
+    "ruta": "/assets/data/codigos/bubble-sort.txt",
+    "icono": "list-outline"
+  }
+]
