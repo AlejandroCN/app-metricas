@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RegistroMetricas } from '../../models/registro-metricas';
+
+import { MetricasService } from '../../services/metricas.service';
 
 @Component({
   selector: 'app-ver-resultados',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerResultadosPage implements OnInit {
 
-  constructor() { }
+  public registrosMetricas: RegistroMetricas[];
+
+  constructor(private metricasService: MetricasService) { }
 
   ngOnInit() {
+    this.registrosMetricas = this.metricasService.obtenerTodasLasMetricas();
   }
 
 }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { VerResultadosPageRoutingModule } from './ver-resultados-routing.module';
 import { HeaderModule } from '../../components/header/header.module';
+import { ListaMetricasModule } from '../../components/lista-metricas/lista-metricas.module';
 
 import { VerResultadosPage } from './ver-resultados.page';
 
@@ -12,7 +13,8 @@ import { VerResultadosPage } from './ver-resultados.page';
     CommonModule,
     IonicModule,
     VerResultadosPageRoutingModule,
-    HeaderModule
+    HeaderModule,
+    ListaMetricasModule
   ],
   declarations: [VerResultadosPage]
 })

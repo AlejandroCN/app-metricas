@@ -1,5 +1,20 @@
 <app-header titulo="Base de Datos"></app-header>
 
 <ion-content color="light">
+  <div *ngFor="let metricas of registrosMetricas">
+    <ion-list>
+      <ion-list-header mode="ios">
+        ID: {{ metricas.codigoId }}
+      </ion-list-header>
+    </ion-list>
+    <app-lista-metricas [metricas]="metricas"></app-lista-metricas>
+  </div>
 
+  <ion-card *ngIf="!registrosMetricas">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">
+        No hay registros
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

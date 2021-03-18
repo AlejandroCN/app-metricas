@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MostrarMetricasPageRoutingModule } from './mostrar-metricas-routing.module';
 import { HeaderModule } from '../../components/header/header.module';
+import { ListaMetricasModule } from '../../components/lista-metricas/lista-metricas.module';
 
 import { MostrarMetricasPage } from './mostrar-metricas.page';
 
@@ -12,7 +13,8 @@ import { MostrarMetricasPage } from './mostrar-metricas.page';
     CommonModule,
     IonicModule,
     MostrarMetricasPageRoutingModule,
-    HeaderModule
+    HeaderModule,
+    ListaMetricasModule
   ],
   declarations: [MostrarMetricasPage]
 })
