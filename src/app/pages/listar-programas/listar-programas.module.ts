@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
-import { CalcularMetricasPageRoutingModule } from './calcular-metricas-routing.module';
-import { CalcularMetricasPage } from './calcular-metricas.page';
+import { ListarProgramasPageRoutingModule } from './listar-programas-routing.module';
+import { ListarProgramasPage } from './listar-programas.page';
 import { HeaderModule } from '../../components/header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
-    CalcularMetricasPageRoutingModule,
+    ListarProgramasPageRoutingModule,
     HeaderModule
   ],
-  declarations: [CalcularMetricasPage]
+  declarations: [ListarProgramasPage]
 })
-export class CalcularMetricasPageModule {}
+export class ListarProgramasPageModule {}

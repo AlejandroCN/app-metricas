@@ -26,4 +26,13 @@ export class CodigosService {
     );
   }
 
+  obtenerCodigoPorId(id: number): Promise<string> {
+    return new Promise((res) => {
+      this.obtenerCodigosDisponibles().toPromise().then(codigos => {
+        const codigo = codigos.find(c => c.id === id);
+        res(this.obtenerCodigo(codigo.ruta).toPromise());
+      });
+    });
+  }
+
 }

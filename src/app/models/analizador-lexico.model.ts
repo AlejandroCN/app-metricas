@@ -63,12 +63,10 @@ export class AnalizadorLexico {
 				} else {
 					lex = this.lexema;
 				}
-        this.tokens.push(tok);
-        this.tokens.push(lex);
+        // this.tokens.push(tok);
+        this.tokens.push(lex.toLowerCase());
 			}
     }
-    this.tokens.push('fin');
-    this.tokens.push('fin');
     return this.tokens;
   }
 

@@ -1,4 +1,4 @@
-<app-header titulo="Calcular Métricas"></app-header>
+<app-header titulo="Listado de programas"></app-header>
 
 <ion-content color="light">
   <ion-list>
@@ -7,7 +7,7 @@
     </ion-list-header>
 
     <ion-item-sliding *ngFor="let codigo of codigos | async">
-      <ion-item>
+      <ion-item [routerLink]="['/mostrar-metricas', codigo.id]">
         <ion-icon slot="start" [name]="codigo.icono"></ion-icon>
         <ion-label>{{ codigo.nombre }}</ion-label>
       </ion-item>

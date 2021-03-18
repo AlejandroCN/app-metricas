@@ -8,11 +8,11 @@ import { ModalCodigoComponent } from '../../components/modal-codigo/modal-codigo
 import { Codigo } from '../../models/codigo.model';
 
 @Component({
-  selector: 'app-calcular-metricas',
-  templateUrl: './calcular-metricas.page.html',
-  styleUrls: ['./calcular-metricas.page.scss'],
+  selector: 'app-listar-programas',
+  templateUrl: './listar-programas.page.html',
+  styleUrls: ['./listar-programas.page.scss'],
 })
-export class CalcularMetricasPage implements OnInit {
+export class ListarProgramasPage implements OnInit {
 
   public codigos: Observable<Codigo[]>
 

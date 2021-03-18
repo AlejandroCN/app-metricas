@@ -7,8 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'calcular-metricas',
-    loadChildren: () => import('./pages/calcular-metricas/calcular-metricas.module').then( m => m.CalcularMetricasPageModule)
+    path: 'listar-programas',
+    loadChildren: () => import('./pages/listar-programas/listar-programas.module').then( m => m.ListarProgramasPageModule)
   },
   {
     path: 'ver-resultados',
@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'creditos',
     loadChildren: () => import('./pages/creditos/creditos.module').then( m => m.CreditosPageModule)
+  },
+  {
+    path: 'mostrar-metricas/:id',
+    loadChildren: () => import('./pages/mostrar-metricas/mostrar-metricas.module').then( m => m.MostrarMetricasPageModule)
   },
   {
     path: '',
