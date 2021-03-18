@@ -26,6 +26,7 @@ export class AnalizadorMetricas {
    * @returns un objeto con las métricas básicas: n1, N1, n2 y N2
    */
   public obtenerMetricasBasicas(tokens: string[]): MetricasBasicas {
+    let comillas = false;
     const operadores: string[] = [];
     const operandos: string[] = [];
     let totalOperadores = 0;
@@ -33,6 +34,16 @@ export class AnalizadorMetricas {
 
     tokens.forEach(token => {
       if (this.catalogoOperadores.includes(token) && !this.operadoresComplementarios.includes(token)) {
+        if (token === '"' && !comillas) {
+          comillas = true;
+        } else if (token === '"' && comillas) {
+          comillas = false;
+          return;
+        }
+        if (token === ';' && this.operadoresComplementarios.includes(operadores[operadores.length - 1])) {
+          return;
+        }
+
         totalOperadores ++;
         !operadores.includes(token) ? operadores.push(token) : null;
       } else {
@@ -49,8 +60,18 @@ export class AnalizadorMetricas {
     };
   }
 
-  public obtenerMetricasDerivadas(metricasBasicas: MetricasBasicas): MetricasDerivadas {
-    return null;
+  public obtenerMetricasDerivadas(basicas: MetricasBasicas): MetricasDerivadas {
+    const derivadas = new MetricasDerivadas();
+    derivadas.N = basicas.N1 +  basicas.N2;
+    derivadas.n = basicas.n1 +  basicas.n2;
+    derivadas.V = Number((derivadas.N * Math.log2(derivadas.n)).toFixed(2));
+    derivadas.D = Number(((basicas.n1 / 2) * (basicas.N2 / basicas.n2)).toFixed(2));
+    derivadas.L = Number((1 / derivadas.D).toFixed(2));
+    derivadas.E = Number((derivadas.D * derivadas.V).toFixed(2));
+    derivadas.T = Number((derivadas.E / 18).toFixed(2));
+    derivadas.B = Number((Math.pow(derivadas.E, 2 / 3) / 3000).toFixed(2));
+
+    return derivadas;
   }
 
 }

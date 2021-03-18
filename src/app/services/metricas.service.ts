@@ -12,8 +12,9 @@ export class MetricasService {
     let registrosExistentes = this.obtenerTodasLasMetricas();
     if (!registrosExistentes) {
       registrosExistentes = [];
+      registrosExistentes.push(registro);
     }
-    registrosExistentes.push(registro);
+    !registrosExistentes.find(r => r.codigoId === registro.codigoId) ? registrosExistentes.push(registro) : null;
     localStorage.setItem('registrosMetricas', JSON.stringify(registrosExistentes));
   }
 
