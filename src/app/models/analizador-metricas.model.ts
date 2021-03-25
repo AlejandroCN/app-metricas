@@ -12,12 +12,12 @@ export class AnalizadorMetricas {
     'funciones', 'fin_funciones',
     'dato', 'cadena', 'numerico',
     'escribir', 'leer', 'escribir_enter', 'mod', 'abs', 'div',
-    '[', ']', '(', ')', '<-', '->', '<', '>', '<=', '>=', '=', '<>', '+', '-', '*', '/', ';', '"',
-    'y', 'o', 'nel', 
+    '[', ']', '(', ')', '<-', '->', '<', '>', '<=', '>=', '=', '<>', '+', '-', '*', '/', ';', '"', ',',
+    'y', 'o', 'nel', 'cad'
   ];
 
   private operadoresComplementarios = ['fin_declara', 'fin_principal', 'fin_funciones', 'fin_itera',
-    'entonces', 'y_si_no', 'fin_verdad', 'fin_funcion', ')', ']'];
+    'entonces', 'fin_verdad', 'fin_funcion', ')', ']'];
 
   /**
    * Itera el arreglo de tokens, almacena sin repetición operadores y operandos en arreglos separados,
@@ -26,24 +26,18 @@ export class AnalizadorMetricas {
    * @returns un objeto con las métricas básicas: n1, N1, n2 y N2
    */
   public obtenerMetricasBasicas(tokens: string[]): MetricasBasicas {
-    let comillas = false;
     const operadores: string[] = [];
     const operandos: string[] = [];
     let totalOperadores = 0;
     let totalOperandos = 0;
 
-    tokens.forEach(token => {
-      if (this.catalogoOperadores.includes(token) && !this.operadoresComplementarios.includes(token)) {
-        if (token === '"' && !comillas) {
-          comillas = true;
-        } else if (token === '"' && comillas) {
-          comillas = false;
-          return;
-        }
+    // del arreglo de tokens y lexemas solo rescatamos los lexemas y los tokens que sean cadenas
+    tokens = tokens.filter((tok, index) => (index % 2 !== 0 && !this.operadoresComplementarios.includes(tok)) || tok === 'cad');
+    tokens.forEach((token) => {
+      if (this.catalogoOperadores.includes(token)) {
         if (token === ';' && this.operadoresComplementarios.includes(operadores[operadores.length - 1])) {
           return;
         }
-
         totalOperadores ++;
         !operadores.includes(token) ? operadores.push(token) : null;
       } else {

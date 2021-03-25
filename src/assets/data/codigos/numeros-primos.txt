@@ -1,0 +1,28 @@
+declara
+  dato i, j, esPrimo -> numerico
+fin_declara
+
+principal
+  i <- 1;
+  itera(i <= 20)
+    verdad(i > 3) entonces
+      j <- 2;
+      esPrimo <- 1;
+      itera(j < i)
+        verdad(i mod j = 0) entonces
+          esPrimo <- 0;
+        fin_verdad
+        j <- j+1;
+      fin_itera
+    y_si_no
+      esPrimo <- 1;
+    fin_verdad
+
+    verdad(esPrimo = 1) entonces
+      escribir("El número: ");
+      escribir(i);
+      escribir_enter(" es primo!");
+    fin_verdad
+    i <- i+1;
+  fin_itera
+fin_principal

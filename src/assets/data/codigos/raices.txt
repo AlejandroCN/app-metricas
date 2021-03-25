@@ -1,0 +1,68 @@
+declara
+  dato TOL, A, B, C, NOSIRVE, X, RAIZ -> numerico
+  dato RESP -> numerico
+  dato FUNA, FUNB, FUNC -> numerico
+  dato nada -> cadena
+fin_declara
+
+principal
+
+RESP <- 1;
+itera(RESP=1)
+  escribir("Dame a del intervalo cerrado [a,b]: ");
+  leer A;
+  escribir_enter(" ");
+  escribir("Dame b del intervalo cerrado [a,b]: ");
+  leer B;
+  escribir_enter(" ");
+  escribir("Dame la tolerancia para la exactitud de la raíz: ");
+  leer TOL;
+  escribir_enter(" ");
+  X <- A;	
+  FUNA <- X*X-5*X+3;
+  escribir_enter(FUNA);
+  leer nada;
+  X <- B;
+  FUNB <- X*X-5*X+3;
+  escribir_enter(FUNB);
+  C <-1; 
+  verdad((FUNA<0 y FUNB>0) o (FUNA>0 y FUNB<0))entonces
+    escribir_enter("La ecuación parece tener al menos una raíz.");
+    itera(C>TOL y RESP<>2)
+      C <- (A+B)/2;
+      X <- C;
+      FUNC <- X*X-5*X+3; 
+      verdad(FUNC*FUNA>0)entonces
+        A <- C;
+      y_si_no
+        B <- C;
+      fin_verdad
+      X <- A;	
+      FUNA <- X*X-5*X+3;
+      X <- B;
+      FUNB <- X*X-5*X+3;
+      verdad(nel((FUNA<0 y FUNB>0) o (FUNA>0 y FUNB<0)))entonces
+        escribir_enter("ALGO SALIO MAL: al parecer hay más raíces en el intervalo dado");
+        escribir("f(a)=");
+        escribir(FUNA);
+        escribir("   f(b)=");
+        escribir_enter(FUNB);        
+        RESP <- 2;
+      fin_verdad
+      RAIZ <- C;
+      X <- C;	
+      C <- abs(X*X-5*X+3);
+    fin_itera
+    verdad(RESP<>2)entonces
+      escribir("La raiz de la ecuación se encuentra en X = ");
+      escribir_enter(RAIZ);
+      RESP <- 2;
+    fin_verdad
+  y_si_no
+    escribir_enter("La ecuacion no tiene raices en ese intervalo.");
+    escribir("Deseas probar con otro (1=Si/2=No)? ");
+    leer RESP;
+  fin_verdad
+fin_itera
+
+fin_principal

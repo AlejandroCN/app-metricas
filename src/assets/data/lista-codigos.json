@@ -10,5 +10,23 @@
     "nombre": "Bubble Sort",
     "ruta": "/assets/data/codigos/bubble-sort.txt",
     "icono": "list-outline"
+  },
+  {
+    "id": "3",
+    "nombre": "Operaciones",
+    "ruta": "/assets/data/codigos/operaciones.txt",
+    "icono": "calculator-outline"
+  },
+  {
+    "id": "4",
+    "nombre": "Números Primos",
+    "ruta": "/assets/data/codigos/numeros-primos.txt",
+    "icono": "extension-puzzle-outline"
+  },
+  {
+    "id": "5",
+    "nombre": "Raíces",
+    "ruta": "/assets/data/codigos/raices.txt",
+    "icono": "pulse-outline"
   }
 ]

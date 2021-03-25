@@ -1,0 +1,26 @@
+declara
+    dato num1 -> numerico
+    dato num2 -> numerico
+    dato resultado -> numerico
+fin_declara
+
+principal
+  num1 <- 10;
+  num2 <- 2;
+
+  resultado <- num1 + num2;
+  escribir("La suma es: ");
+  escribir_enter(resultado);
+
+  resultado <- num1 - num2;
+  escribir("La diferencia es: ");
+  escribir_enter(resultado);
+
+  resultado <- num1 * num2;
+  escribir("La multiplicación es: ");
+  escribir_enter(resultado);
+
+  resultado <- num1 / num2;
+  escribir("La división es: ");
+  escribir_enter(resultado);
+fin_principal

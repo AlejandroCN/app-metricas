@@ -17,7 +17,7 @@ principal
 			leer num;
 			numeros[i] <- num;
 			i <- i+1;
-		fin_itera;
+		fin_itera
 
 		//Ordenamiento bubbleSort
 		i <- 1;
@@ -28,11 +28,11 @@ principal
 					aux <- numeros[i];
 					numeros[i] <- numeros[j];
 					numeros[j] <- aux;
-				fin_verdad;
+				fin_verdad
 				j <- j+1;
-			fin_itera;
+			fin_itera
 			i <- i+1;
-		fin_itera;
+		fin_itera
 
 		//Mostrando el arreglo de numeros ya ordenado
 		i <- 1;
@@ -41,7 +41,7 @@ principal
 		itera(i <= cant)
 			escribir_enter(numeros[i]);
 			i <- i+1;
-		fin_itera;
+		fin_itera
 
 		//Sumando todos los numeros del arreglo
 		suma <- 0;
@@ -49,7 +49,7 @@ principal
         itera(i <= cant)
             suma <- suma + numeros[i];
             i <- i+1;
-        fin_itera;
+        fin_itera
 
 		escribir_enter(" ");
         escribir("La suma de los numeros ingresados es: ");
@@ -57,6 +57,6 @@ principal
 
 	y_si_no
 		escribir_enter("Respuesta no valida!");
-	fin_verdad;
+	fin_verdad
 
 fin_principal
